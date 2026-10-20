@@ -7,7 +7,6 @@
 
   <title>Diamond Htoo & Ei Mon Kyaw — Wedding Invitation</title>
 
-  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
@@ -48,10 +47,7 @@
       overflow-x: hidden;
     }
 
-    button,
-    input,
-    select,
-    textarea {
+    button, input, select, textarea {
       font: inherit;
     }
 
@@ -62,17 +58,16 @@
     /* HERO / ENVELOPE */
 
     .hero-section {
-      min-height: 100svh;
       min-height: 100vh;
-      padding: 45px 16px 35px;
+      min-height: 100svh;
+      padding: 35px 16px;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       position: relative;
       isolation: isolate;
-      background:
-        radial-gradient(circle at top, #ebf2f7 0%, #faf8f5 70%);
+      background: radial-gradient(circle at top, #ebf2f7 0%, #faf8f5 70%);
     }
 
     .floating-stickers {
@@ -162,20 +157,24 @@
     }
 
     .preview-names {
+      width: 100%;
       margin: 12px 0;
       font-family: var(--heading);
-      font-size: clamp(2rem, 7vw, 2.7rem);
-      line-height: 1.25;
+      font-size: clamp(1.5rem, 5.5vw, 2.7rem);
+      line-height: 1.3;
       font-weight: normal;
       color: var(--pink);
-      overflow-wrap: anywhere;
+      white-space: nowrap;
+      overflow-wrap: normal;
     }
 
     .preview-date {
+      max-width: 100%;
       font-family: var(--serif);
-      font-size: 0.9rem;
+      font-size: clamp(0.65rem, 2.7vw, 0.9rem);
       font-style: italic;
       color: var(--muted);
+      white-space: nowrap;
     }
 
     .envelope-flap {
@@ -254,7 +253,7 @@
       box-shadow: 0 6px 20px rgba(74, 107, 130, 0.3);
     }
 
-    /* CLOVER DECORATIONS */
+    /* FLOWER DECORATIONS */
 
     .clover-side {
       position: absolute;
@@ -303,12 +302,7 @@
       padding: 8px;
       margin-bottom: 25px;
       border-radius: 16px;
-      background: linear-gradient(
-        135deg,
-        var(--light-gold),
-        var(--light-blue),
-        var(--light-gold)
-      );
+      background: linear-gradient(135deg, var(--light-gold), var(--light-blue), var(--light-gold));
       box-shadow: 0 15px 35px rgba(74, 107, 130, 0.12);
     }
 
@@ -395,12 +389,7 @@
     .divider-line {
       width: 70px;
       height: 1px;
-      background: linear-gradient(
-        to right,
-        transparent,
-        var(--gold),
-        transparent
-      );
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
     }
 
     .welcome-text-title {
@@ -529,7 +518,7 @@
       font-size: 1.4rem;
     }
 
-    /* RSVP SECTION */
+    /* RSVP */
 
     .rsvp-section {
       padding: 42px 16px;
@@ -726,52 +715,93 @@
 
     @media (max-width: 700px) {
       .hero-section {
-        padding: 40px 16px 30px;
+        min-height: 100svh;
+        padding: 28px 12px 24px;
+      }
+
+      .envelope-outer-container {
+        width: 100%;
+        max-width: 540px;
       }
 
       .envelope {
-        height: 280px;
+        height: 260px;
       }
 
       .envelope-card-preview {
-        height: 250px;
-        padding: 14px;
+        top: 12px;
+        left: 5%;
+        width: 90%;
+        height: 236px;
+        padding: 12px 6px;
+      }
+
+      .preview-eyebrow {
+        font-size: clamp(0.48rem, 2.2vw, 0.65rem);
+        letter-spacing: 1.2px;
+      }
+
+      .preview-names {
+        width: 100%;
+        margin: 10px 0 14px;
+        font-size: clamp(1.35rem, 5.2vw, 2.15rem);
+        line-height: 1.35;
+        white-space: nowrap;
+      }
+
+      .preview-date {
+        font-size: clamp(0.58rem, 2.5vw, 0.82rem);
+        white-space: nowrap;
       }
 
       .envelope-flap {
+        left: 0;
+        border-left-width: 50%;
+        border-right-width: 50%;
+        border-top-width: 130px;
+      }
+
+      /* Use viewport-based borders so the flap scales with the phone */
+      .envelope-flap {
         border-left-width: 45vw;
         border-right-width: 45vw;
-        border-top-width: 30vw;
+        border-top-width: 31vw;
       }
 
       .wax-seal {
-        top: calc(-30vw + 8px);
-        width: 52px;
-        height: 52px;
-        font-size: 0.7rem;
+        top: calc(-31vw + 7px);
+        width: 50px;
+        height: 50px;
+        font-size: 0.65rem;
+      }
+
+      .envelope-wrapper.open .envelope-card-preview {
+        transform: translateY(-115px);
       }
 
       .clover-side {
-        width: 70px;
-        height: 175px;
+        width: 58px;
+        height: 150px;
       }
 
       .clover-left {
         left: -8px;
+        bottom: -8px;
       }
 
       .clover-right {
         right: -8px;
+        bottom: -8px;
       }
 
       .open-btn-container {
-        margin-top: 30px;
+        margin-top: 25px;
       }
 
       .open-btn {
         max-width: 100%;
-        padding: 13px 22px;
-        font-size: 0.75rem;
+        padding: 12px 20px;
+        font-size: 0.72rem;
         letter-spacing: 1px;
       }
 
@@ -784,8 +814,9 @@
       }
 
       .couple-names {
-        font-size: clamp(2.35rem, 8vw, 3rem);
+        font-size: clamp(2rem, 7vw, 2.8rem);
         line-height: 1.25;
+        overflow-wrap: anywhere;
       }
 
       .wedding-subtitle {
@@ -850,50 +881,67 @@
 
     @media (max-width: 380px) {
       .hero-section {
-        padding-right: 12px;
-        padding-left: 12px;
+        padding-right: 10px;
+        padding-left: 10px;
       }
 
       .envelope {
-        height: 245px;
+        height: 235px;
       }
 
       .envelope-card-preview {
+        top: 10px;
         height: 215px;
+        padding: 10px 4px;
       }
 
       .preview-eyebrow {
-        font-size: 0.6rem;
-        letter-spacing: 1.5px;
+        font-size: 0.48rem;
+        letter-spacing: 1px;
       }
 
       .preview-names {
-        font-size: 2rem;
+        font-size: clamp(1.15rem, 5vw, 1.35rem);
+        margin: 9px 0 12px;
+        white-space: nowrap;
       }
 
       .preview-date {
-        font-size: 0.78rem;
+        font-size: 0.58rem;
+        white-space: nowrap;
+      }
+
+      .envelope-flap {
+        border-left-width: 45vw;
+        border-right-width: 45vw;
+        border-top-width: 30vw;
+      }
+
+      .wax-seal {
+        top: calc(-30vw + 6px);
+        width: 43px;
+        height: 43px;
+        font-size: 0.58rem;
+      }
+
+      .envelope-wrapper.open .envelope-card-preview {
+        transform: translateY(-95px);
       }
 
       .clover-side {
-        width: 52px;
-        height: 145px;
+        width: 45px;
+        height: 125px;
       }
 
-      .clover-left {
-        left: -5px;
-      }
-
-      .clover-right {
-        right: -5px;
-      }
+      .clover-left { left: -5px; }
+      .clover-right { right: -5px; }
 
       .welcome-card {
         padding: 28px 13px;
       }
 
       .couple-names {
-        font-size: 2.15rem;
+        font-size: 2rem;
       }
 
       .wedding-subtitle {
@@ -958,7 +1006,7 @@
 
     <div class="envelope-outer-container">
 
-      <!-- LEFT CLOVER DECORATION -->
+      <!-- LEFT FLOWER DECORATION -->
       <svg class="clover-side clover-left" viewBox="0 0 100 250" aria-hidden="true">
         <path d="M50 250 Q45 180 40 100 Q38 50 45 10" stroke="#5E7D5A" stroke-width="2.5" fill="none"/>
         <path d="M50 250 Q58 190 62 120 Q65 60 58 20" stroke="#5E7D5A" stroke-width="2" fill="none"/>
@@ -1031,18 +1079,14 @@
           aria-expanded="false"
         >
           <div class="envelope-card-preview">
-
             <p class="preview-eyebrow">A LOVE LETTER FROM</p>
-
             <h1 class="preview-names">Diamond &amp; Ei Mon</h1>
-
             <p class="preview-date">Save the Date — 28.11.2026</p>
-
           </div>
         </div>
       </div>
 
-      <!-- RIGHT CLOVER DECORATION -->
+      <!-- RIGHT FLOWER DECORATION -->
       <svg class="clover-side clover-right" viewBox="0 0 100 250" aria-hidden="true">
         <path d="M50 250 Q45 180 40 100 Q38 50 45 10" stroke="#5E7D5A" stroke-width="2.5" fill="none"/>
         <path d="M50 250 Q58 190 62 120 Q65 60 58 20" stroke="#5E7D5A" stroke-width="2" fill="none"/>
@@ -1106,17 +1150,15 @@
         <span>Open The Invitation</span> 💌
       </button>
     </div>
-
   </section>
 
-  <!-- MAIN INVITATION AND RSVP -->
+  <!-- MAIN INVITATION -->
   <div class="content-wrapper" id="contentWrapper" aria-hidden="true">
 
     <main class="main-container" id="invitationContent">
       <div class="card-border-wrap">
         <div class="welcome-card">
 
-          <!-- FLORAL DECORATION -->
           <svg class="floral-svg-header" viewBox="0 0 100 40" aria-hidden="true">
             <path d="M50,20 Q40,5 25,15 Q10,25 5,10 Q20,10 35,20 Q20,30 5,30 Q10,15 25,25 Q40,35 50,20 Z"/>
             <path d="M50,20 Q60,5 75,15 Q90,25 95,10 Q80,10 65,20 Q80,30 95,30 Q90,15 75,25 Q60,35 50,20 Z"/>
@@ -1124,12 +1166,10 @@
           </svg>
 
           <h2 class="couple-names">Diamond Htoo &amp; Ei Mon Kyaw</h2>
-
           <p class="wedding-subtitle">Welcome to Our Special Day</p>
 
           <!-- WEDDING PHOTOS -->
           <div class="photo-gallery">
-
             <div class="photo-frame">
               <img
                 src="1.jpg"
@@ -1147,7 +1187,6 @@
                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80';"
               >
             </div>
-
           </div>
 
           <div class="decorative-divider" aria-hidden="true">
@@ -1156,7 +1195,6 @@
             <div class="divider-line"></div>
           </div>
 
-          <!-- WELCOME MESSAGE -->
           <h3 class="welcome-text-title">Dear Friends &amp; Family,</h3>
 
           <p class="welcome-text-body">
@@ -1167,7 +1205,6 @@
 
           <!-- EVENT DETAILS -->
           <div class="event-details-grid">
-
             <div class="detail-item">
               <span class="detail-icon">📅</span>
               <div class="detail-label">Date</div>
@@ -1188,16 +1225,13 @@
                 No.110 C, Nant Thar Kone Yeik Thar St, Yangon
               </div>
             </div>
-
           </div>
 
           <!-- COUNTDOWN -->
           <div class="countdown-section">
-
             <p class="countdown-title">Counting Down To Our Forever</p>
 
             <div class="timer-container">
-
               <div class="timer-box">
                 <div class="timer-val" id="days">00</div>
                 <div class="timer-label">Days</div>
@@ -1223,7 +1257,6 @@
                 <div class="timer-val" id="seconds">00</div>
                 <div class="timer-label">Seconds</div>
               </div>
-
             </div>
           </div>
 
@@ -1236,9 +1269,7 @@
       <div class="rsvp-card">
 
         <div class="rsvp-decor">🩵 🕊️ 🩵</div>
-
         <p class="rsvp-eyebrow">A LITTLE NOTE FOR US ♡</p>
-
         <h2>Will you be there?</h2>
 
         <p class="rsvp-intro">
@@ -1311,13 +1342,11 @@
           </button>
 
           <p id="rsvpStatus" role="status" aria-live="polite"></p>
-
         </form>
 
         <div class="rsvp-bottom">
           made with love &amp; a little bit of magic ✨
         </div>
-
       </div>
     </section>
 
@@ -1384,16 +1413,12 @@
     openBtn.addEventListener("click", toggleEnvelope);
 
 
-    /* WEDDING COUNTDOWN
-       Target: 28 November 2026, 4:00 PM Myanmar time.
-       Myanmar time is UTC+06:30.
-    */
+    /* WEDDING COUNTDOWN: 28 NOVEMBER 2026, 4:00 PM MYANMAR TIME */
 
     const weddingDate = new Date("2026-11-28T16:00:00+06:30").getTime();
 
     function updateCountdown() {
-      const now = Date.now();
-      const difference = weddingDate - now;
+      const difference = weddingDate - Date.now();
 
       const daysElement = document.getElementById("days");
       const hoursElement = document.getElementById("hours");
@@ -1408,23 +1433,14 @@
         return;
       }
 
-      const days = Math.floor(
-        difference / (1000 * 60 * 60 * 24)
-      );
-
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
       const hours = Math.floor(
-        (difference % (1000 * 60 * 60 * 24)) /
-        (1000 * 60 * 60)
+        (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
-
       const minutes = Math.floor(
-        (difference % (1000 * 60 * 60)) /
-        (1000 * 60)
+        (difference % (1000 * 60 * 60)) / (1000 * 60)
       );
-
-      const seconds = Math.floor(
-        (difference % (1000 * 60)) / 1000
-      );
+      const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
       daysElement.textContent = String(days).padStart(2, "0");
       hoursElement.textContent = String(hours).padStart(2, "0");
@@ -1456,11 +1472,7 @@
       rsvpGuestCount.required = attending;
     }
 
-    rsvpAttendance.addEventListener(
-      "change",
-      updateRsvpGuestCount
-    );
-
+    rsvpAttendance.addEventListener("change", updateRsvpGuestCount);
     updateRsvpGuestCount();
 
     rsvpForm.addEventListener("submit", async function(event) {
@@ -1470,7 +1482,6 @@
         return;
       }
 
-      // Stop automated form submissions.
       const spamField = document.getElementById("website");
 
       if (spamField.value.trim() !== "") {
